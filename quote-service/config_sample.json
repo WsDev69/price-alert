@@ -1,0 +1,18 @@
+{
+    "listen_url": ":8084",
+    "url_prefix": "/api",
+    "log_preset": "debug",
+    "pagination_limit": 100,
+    "redis": {
+        "addrs": "localhost:6379",
+        "password": "wu1ohr5Eipun8Eim",
+        "pool_size": 10
+    },
+    "kafka" : {
+        "bootstrap_server": "127.0.0.1:9581"
+    },
+    "crypto_compare" : {
+        "url" : "wss://streamer.cryptocompare.com/v2?api_key=",
+        "api_key": ""
+    }
+}

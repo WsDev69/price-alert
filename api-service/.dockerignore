@@ -1,0 +1,7 @@
+# Automatically generated
+vendor/
+
+# Local specifics
+.idea/
+/bin/*
+go.sum

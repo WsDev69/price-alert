@@ -1,0 +1,37 @@
+version: "3.3"
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/project/
+      - ./init.sh:/docker-entrypoint-initdb.d/init.sh
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "12345"
+      POSTGRES_DB: api-price-db
+  redis:
+    image: redis
+    container_name: redis
+    command: redis-server --requirepass wu1ohr5Eipun8Eim
+    ports:
+      - 6379:6379
+  kafka:
+    image: lensesio/fast-data-dev:latest
+    container_name: kafka
+    ports:
+      - 2181:2181
+      - 3030:3030
+      - 8081-8083:8081-8083
+      - 9581-9585:9581-9585
+      - 9092:9092
+    environment:
+      ADV_HOST: localhost
+  mailhog:
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - 8025:8025
+      - 1025:1025

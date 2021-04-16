@@ -1,0 +1,12 @@
+{
+    "listen_url": ":8085",
+    "url_prefix": "/api",
+    "log_preset": "debug",
+    "pagination_limit": 100,
+
+    "smtp" : {
+        "password" : "",
+        "host" : "127.0.0.1",
+        "from" : "test@test.com"
+    }
+}
